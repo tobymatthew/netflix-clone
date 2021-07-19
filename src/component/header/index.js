@@ -11,7 +11,7 @@ Header.Frame = function HeaderFrame({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 };
 
-Header.Logo = function HeaderLogo({ to, ...restProps }) {
+Header.Logo = function HeaderLogo({to, ...restProps }) {
   return (
     <ReachRouterLink to={to}>
       <Logo {...restProps} />
