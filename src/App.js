@@ -1,16 +1,28 @@
-import React from 'react'
-import {JumbotronContainer} from './containers/jumbotron'
-import { FooterContainer } from './containers/footer'
-import { FaqsContainer } from './containers/faq'
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Home, Signin, Signup, Browse } from "./pages";
+// import * as Routes from "./constant/router";
 
-export default function App() {
+export default function app() {
   return (
     <div>
-       <JumbotronContainer/>
-       <FaqsContainer/>
-       <FooterContainer/>
-    </div>
-  )
-}
+      <Router>
+        <Route exact path="/signin">
+          <Signin />
+        </Route>
 
- 
+        <Route exact path="/signup">
+          <Signup />
+        </Route>
+
+        <Route exact path="/browse">
+          <Browse />
+        </Route>
+
+        <Route exact path="/">
+          <Home />
+        </Route>
+      </Router>
+    </div>
+  );
+}
