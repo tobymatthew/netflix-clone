@@ -5,7 +5,7 @@ import { IsUserRedirect,ProtectedRoutes } from "./helpers/routes";
 import * as ROUTES from "./constant/router";
 
 export default function app() {
-  const user =null;
+  const user ={};
   return (
     <div>
       <Router>
