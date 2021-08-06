@@ -9,14 +9,16 @@ export function SelectProfileContainer({user,setProfile}) {
         <>
          <Header>
           <Header.Frame>
-          <Header.Logo to={ROUTES.HOME} src={logo} alt="NETFLIX" />
+          <Header.Logo to={ROUTES.BROWSE} src={logo} alt="NETFLIX" />
+          <Header.TextLink>Movies</Header.TextLink>
           </Header.Frame>   
         </Header>  
 
         <Profiles>
-           <Profiles.Titles>Who is watching</Profiles.Titles> 
+           <Profiles.Title>Who is watching</Profiles.Title> 
            <Profiles.List>
-             <Profiles.User>
+             <Profiles.User onClick={() => setProfile({ displayName: user.displayName, photoURL: user.photoURL })}
+                data-testid="user-profile">
                 <Profiles.Picture src={user.photoURL}/>
                 <Profiles.Name>{user.displayName}</Profiles.Name>
              </Profiles.User>
